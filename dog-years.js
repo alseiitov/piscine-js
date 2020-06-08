@@ -1,20 +1,20 @@
 function dogYears(planet, seconds) {
     switch (planet) {
-        case 'Earth':
+        case 'earth':
             return ((seconds / (1 * 31557600)) * 7).toFixed(2)
-        case 'Mercury':
+        case 'mercury':
             return ((seconds / (0.2408467 * 31557600)) * 7).toFixed(2)
-        case 'Venus':
+        case 'venus':
             return ((seconds / (0.61519726 * 31557600)) * 7).toFixed(2)
-        case 'Mars':
+        case 'mars':
             return ((seconds / (1.8808158 * 31557600)) * 7).toFixed(2)
-        case 'Jupiter':
+        case 'jupiter':
             return ((seconds / (11.862615 * 31557600)) * 7).toFixed(2)
-        case 'Saturn':
+        case 'saturn':
             return ((seconds / (29.447498 * 31557600)) * 7).toFixed(2)
-        case 'Uranus':
+        case 'uranus':
             return ((seconds / (84.016846 * 31557600)) * 7).toFixed(2)
-        case 'Neptune':
+        case 'neptune':
             return ((seconds / (164.79132 * 31557600)) * 7).toFixed(2)
     }
 }
