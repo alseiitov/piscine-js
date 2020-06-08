@@ -1,15 +1,4 @@
-function more(foo) {
-    return foo++
-};
-
-function less(foo) {
-    return foo--
-};
-
-function add(foo, bar) {
-    return (foo + bar)
-};
-
-function sub(foo) {
-    return (foo - bar)
-};
+const more = (a) => a + 1;
+const less = (a) => a - 1;
+const add = (a, b) => a + b;
+const sub = (a, b) => a - b;
