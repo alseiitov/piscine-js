@@ -1,12 +1,7 @@
-
 clone1 = person;
 clone2 = person;
 
-var samePerson = {
-    name: 'Rick',
-    age: 77,
-    country: 'US',
-};
+var samePerson = Object.assign({}, person);
 
 person.age++;
 person.country = 'FR';
