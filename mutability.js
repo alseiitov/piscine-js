@@ -1,5 +1,5 @@
-clone1 = person;
-clone2 = person;
+clone1 = Object.assign({}, person);
+clone2 = Object.assign({}, person);
 
 var samePerson = Object.assign({}, person);
 
