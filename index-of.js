@@ -1,5 +1,5 @@
 function indexOf(array, value, index) {
-    for (i = index; i < array.length; i++) {
+    for (let i = index; i < array.length; i++) {
         if (array[i] === value) {
             return i
         }
