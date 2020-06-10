@@ -1,4 +1,8 @@
 function indexOf(array, value, index) {
+    if (!index) {
+        index = 0
+    }
+
     for (let i = index; i < array.length; i++) {
         if (array[i] === value) {
             return i
@@ -8,6 +12,10 @@ function indexOf(array, value, index) {
 }
 
 function lastIndexOf(array, value, index) {
+    if (!index) {
+        index = 0
+    }
+    
     for (let i = array.length - 1; i >= index; i--) {
         if (array[i] === value) {
             return i
@@ -17,6 +25,10 @@ function lastIndexOf(array, value, index) {
 }
 
 function includes(array, value, index) {
+    if (!index) {
+        index = 0
+    }
+    
     for (let i = index; i < array.length; i++) {
         if (array[i] === value) {
             return true
@@ -24,3 +36,5 @@ function includes(array, value, index) {
     }
     return false
 }
+
+console.log(indexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
