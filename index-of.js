@@ -16,7 +16,7 @@ function lastIndexOf(array, value, index) {
         index = 0
     }
     
-    for (let i = array.length - 1 - index; i >= 0; i--) {
+    for (let i = index; i >= 0; i--) {
         if (array[i] === value) {
             return i
         }
@@ -36,3 +36,4 @@ function includes(array, value, index) {
     }
     return false
 }
+
