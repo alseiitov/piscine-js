@@ -1,5 +1,5 @@
 function pyramid(str, max) {
-    return recusrion(str, max, max).trimRight()
+    return recusrion(str, max, max).trimRight().trimRight()
 }
 
 function recusrion(str, num, max) {
@@ -10,7 +10,7 @@ function recusrion(str, num, max) {
     for (let i = 0; i < num; i++) {
         line += str
     }
-    while (line.length < max) {
+    while (line.length < max * str.length) {
         line = ' ' + line
     }
     for (let i = 1; i < num; i++) {
