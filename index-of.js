@@ -16,7 +16,7 @@ function lastIndexOf(array, value, index) {
         index = 0
     }
     
-    for (let i = array.length - 1; i >= index; i--) {
+    for (let i = array.length - 1 - index; i >= 0; i--) {
         if (array[i] === value) {
             return i
         }
@@ -36,5 +36,5 @@ function includes(array, value, index) {
     }
     return false
 }
-
-console.log(indexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
+let t = "a";
+console.log(lastIndexOf([t, 0, 0, t], t, 2))
