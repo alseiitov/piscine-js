@@ -24,6 +24,3 @@ function includes(array, value, index) {
     }
     return false
 }
-
-let t = "a"
-console.log(indexOf([t, 0, 0, t], t, 1))
