@@ -15,4 +15,3 @@ function chunk(array, len) {
     }
     return res
 }
-
