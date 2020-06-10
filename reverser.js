@@ -1,4 +1,4 @@
-function reverser(data) {
+function reverse(data) {
     let isString;
     let res = [];
 
