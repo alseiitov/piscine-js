@@ -25,5 +25,3 @@ function includes(array, value) {
     }
     return false
 }
-
-console.log(includes([1,2,2,4], {}))
