@@ -1,6 +1,6 @@
 function ionOut(str) {
     const regex = /tion(,| |$)/;
-    let arr = str.split(', ').join('').split(' ');
+    let arr = str.split(' ').join(',').split(',');
     let res = [];
 
     for (let i = 0; i < arr.length; i++) {
@@ -12,4 +12,4 @@ function ionOut(str) {
     return res
 }
 
-console.log(ionOut(' 1st position is the vision of the 2nd position'))
+console.log(ionOut('attention, direction'))
