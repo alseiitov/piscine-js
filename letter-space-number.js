@@ -1,1 +1,7 @@
-const letterSpaceNumber = (str) => str.match(/. \d((?=\W)|$)/g);
+function letterSpaceNumber(str) {
+    let res = str.match(/. \d((?=\W)|$)/g);
+    if (res) {
+        return res
+    }
+    return []
+}
