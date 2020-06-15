@@ -10,7 +10,7 @@ function addWeek(date) {
     ]
     let first = new Date('0001-01-01')
     let weekDayNum = date.getDay()
-    let week = Math.ceil(((date - first + 2) / 86400000) / 7);
+    let week = Math.ceil(((date - first + 1) / 86400000) / 7);
     if (week % 2 != 0) {
         return weekDays[weekDayNum]
     } else {
