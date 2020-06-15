@@ -1,6 +1,5 @@
-function matchCron(cron, Obj) {
+function matchCron(cron, date) {
     let arr = cron.split(' ')
-    let date = new Date('2020-06-01 00:00:00')
     let cronObj = {
         minute: arr[0],
         hour: arr[1],
@@ -13,21 +12,16 @@ function matchCron(cron, Obj) {
         minute: date.getMinutes(),
         hour: date.getHours(),
         dayOfTheMonth: date.getDate(),
-        monthOfTheYear: date.getMonth(),
-        dayOfTheWeek: date.getDay() 
+        monthOfTheYear: date.getMonth()+1,
+        dayOfTheWeek: date.getDay()
     }
-    
-    console.log(cronObj, dateObj)
 
-    for (let i = 0; i < 5; i++) {
-        if (cronObj[i] == '*') {
-            continue
-        }
-        if (Number(cronObj[i]) != dateObj[i]) {
-            return false
+    for (const key in cronObj) {
+        if (cronObj.hasOwnProperty(key)) {
+            if (cronObj[key] != '*' && cronObj[key] != dateObj[key]) {
+                return false
+            }
         }
     }
     return true
 }
-
-console.log(matchCron('* * * * 1', new Date('2020-06-02 00:00:00')))
