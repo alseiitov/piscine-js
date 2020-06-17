@@ -13,10 +13,13 @@ t(({ eq, ctx }) =>
     'Jackson',
     'Utqiagvik',
     'Albuquerque',
-  ]),
+  ])
 )
 
-t(({ eq, ctx }) => eq(ctx.mapCalls[0], ctx.states))
+t(({ eq, ctx }) =>
+  // check that the code did use map properly
+  eq(ctx.mapCalls[0], ctx.states)
+)
 
 // upperCasingStates
 t(({ eq, ctx }) =>
@@ -30,14 +33,17 @@ t(({ eq, ctx }) =>
     'Ohio',
     'Texas',
     'West Virginia',
-  ]),
+  ])
 )
 
-t(({ eq, ctx }) => eq(ctx.mapCalls.includes(ctx.cities), true))
-
-// farenheitToCelsius
 t(({ eq, ctx }) =>
-  eq(farenheitToCelsius(ctx.temps), [
+  // check that the code did use map properly
+  eq(ctx.mapCalls.includes(ctx.cities), true)
+)
+
+// fahrenheitToCelsius
+t(({ eq, ctx }) =>
+  eq(fahrenheitToCelsius(ctx.temps), [
     '30°C',
     '37°C',
     '5°C',
@@ -45,10 +51,13 @@ t(({ eq, ctx }) =>
     '-13°C',
     '21°C',
     '-19°C',
-  ]),
+  ])
 )
 
-t(({ eq, ctx }) => eq(ctx.mapCalls.includes(ctx.temps), true))
+t(({ eq, ctx }) =>
+  // check that the code did use map properly
+  eq(ctx.mapCalls.includes(ctx.temps), true)
+)
 
 // trimTemp
 t(({ eq, ctx }) =>
@@ -92,10 +101,13 @@ t(({ eq, ctx }) =>
       region: 'West',
       temperature: '95°F',
     },
-  ]),
+  ])
 )
 
-t(({ eq, ctx }) => eq(ctx.mapCalls.includes(ctx.states), true))
+t(({ eq, ctx }) =>
+  // check that the code did use map properly
+  eq(ctx.mapCalls.includes(ctx.states), true)
+)
 
 // tempForecasts
 t(({ eq, ctx }) =>
@@ -109,7 +121,7 @@ t(({ eq, ctx }) =>
     '21°Celsius in Jackson, Mississippi',
     '-19°Celsius in Utqiagvik, Alaska',
     '35°Celsius in Albuquerque, New Mexico',
-  ]),
+  ])
 )
 
 export const setup = () => {
