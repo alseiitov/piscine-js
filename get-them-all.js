@@ -1,24 +1,33 @@
 export { getArchitects, getClassical, getActive, getBonannoPisano }
 
 function getArchitects() {
-    return [].push(Array.from(document.getElementsByTagName('a')))
-        .push(Array.from(document.getElementsByTagName('span')))
+    var arr = []
+    arr.push(Array.from(document.getElementsByTagName("a")))
+    arr.push(Array.from(document.getElementsByTagName("span")))
+
+    return arr
 }
 
-
 function getClassical() {
-    return [].push(Array.from(document.querySelectorAll('a.classical')))
-        .push(Array.from(document.querySelectorAll('a:not(.classical)')))
+    var arr = []
+    arr.push(Array.from(document.querySelectorAll('a.classical')))
+    arr.push(Array.from(document.querySelectorAll('a:not(.classical)')))
 
+    return arr
 }
 
 function getActive() {
-    return [].push(Array.from(document.getElementsByTagName('classical active')))
-        .push(Array.from(document.getElementsByTagName('.classical:not(.active)')))
+    var arr = []
+    arr.push(Array.from(document.getElementsByClassName('classical active')))
+    arr.push(Array.from(document.querySelectorAll('.classical:not(.active)')))
 
+    return arr
 }
 
 function getBonannoPisano() {
-    return [].push(document.getElementById('BonannoPisano'))
-        .push(Array.from(document.querySelectorAll('a.classical.active:not(#BonannoPisano)')))
+    var arr = []
+    arr.push(document.getElementById("BonannoPisano"))
+    arr.push(Array.from(document.querySelectorAll('a.classical.active:not(#BonannoPisano)')))
+
+    return arr
 }
