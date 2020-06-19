@@ -14,5 +14,5 @@ const getActive = () =>
 
 const getBonannoPisano = () =>
     [].push(document.getElementById('BonannoPisano'))
-        .push(Array.from(document.querySelectorAll('a.classical.active:not(#BonannoPisano)')))
+        .concat(Array.from(document.querySelectorAll('a.classical.active:not(#BonannoPisano)')))
 
