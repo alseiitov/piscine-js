@@ -1,18 +1,18 @@
 export { getArchitects, getClassical, getActive, getBonannoPisano }
 
 const getArchitects = () =>
-    [].push(document.getElementsByTagName('a'))
-        .push(document.getElementsByTagName('span'))
+    [].push(Array.from(document.getElementsByTagName('a')))
+        .push(Array.from(document.getElementsByTagName('span')))
 
 const getClassical = () =>
-    [].push(document.getElementsByClassName('classical'))
-        .push(document.querySelectorAll('a:not(.classical)'))
+    [].push(Array.from(document.getElementsByClassName('classical')))
+        .push(Array.from(document.querySelectorAll('a:not(.classical)')))
 
 const getActive = () =>
-    [].push(document.getElementsByTagName('classical active'))
-        .push(document.getElementsByTagName('a.classical:not(.active)'))
+    [].push(Array.from(document.getElementsByTagName('classical active')))
+        .push(Array.from(document.getElementsByTagName('a.classical:not(.active)')))
 
 const getBonannoPisano = () =>
     [].push(document.getElementById('BonannoPisano'))
-        .push(document.querySelectorAll('a:not(#BonannoPisano)'))
+        .push(Array.from(document.querySelectorAll('a:not(#BonannoPisano)')))
 
