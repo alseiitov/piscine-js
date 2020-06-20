@@ -27,15 +27,15 @@ function pick() {
         hueElem.textContent = `hue\n${hue}`
         luminosityElem.textContent = `${luminosity}\nluminosity`
 
-        axisX.setAttribute('x1', 0);
-        axisX.setAttribute('x2', width);
-        axisX.setAttribute('y1', y);
-        axisX.setAttribute('y2', y);
+        axisX.setAttribute('x1', x);
+        axisX.setAttribute('x2', x);
+        axisX.setAttribute('y1', 0);
+        axisX.setAttribute('y2', width);
 
-        axisY.setAttribute('x1', x);
-        axisY.setAttribute('x2', x);
-        axisY.setAttribute('y1', 0);
-        axisY.setAttribute('y2', height);
+        axisY.setAttribute('x1', 0);
+        axisY.setAttribute('x2', height);
+        axisY.setAttribute('y1', y);
+        axisY.setAttribute('y2', y);
 
         document.body.style.background = hsl
     })
