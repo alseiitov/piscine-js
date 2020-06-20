@@ -14,7 +14,7 @@ function generateColdShades() {
     colors.forEach(color => {
         if ((/(aqua|blue|turquoise|green|cyan|navy|purple)/).test(color)) {
             let div = document.createElement('div')
-            div.classList.add('card', color)
+            div.classList.add(color)
             div.textContent = color
             document.body.appendChild(div)
         }
@@ -22,7 +22,7 @@ function generateColdShades() {
 }
 
 function choseShade(shade) {
-    let allCards = Array.from(document.getElementsByClassName('card'))
+    let allCards = Array.from(document.getElementsByTagName('div'))
     allCards.forEach(div => {
         div.classList.remove(div.classList[div.classList.length - 1])
         div.classList.add(shade)
