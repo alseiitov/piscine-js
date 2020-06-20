@@ -14,6 +14,7 @@ function pimp() {
     if (len === styles.length && button.textContent != 'Unpimp my style') {
         button.textContent = 'Unpimp my style'
         button.classList.add(toAddOrDelete)
+        return
     }
     if (button.textContent === 'pimp my style') {
         button.classList.add(toAddOrDelete)
