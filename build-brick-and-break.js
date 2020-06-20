@@ -1,27 +1,34 @@
-export { build, repair, destroy }
+export { build, repair, destroy, addBrick }
 
-window.setInterval(build, 100);
 
-let counter = 0;
+var counter = 0;
+var interval;
 
 function build(bricksNum) {
-    for (let i = 1; i <= bricksNum; i++) {
-        counter++
-        let newDiv;
+    interval = setInterval(addBrick, 100, bricksNum)
+}
 
-        newDiv = document.createElement('div')
-        newDiv.setAttribute('class', 'brick')
-        newDiv.setAttribute('id', `brick-${i}`)
-
-        if (counter === 2) {
-            newDiv.setAttribute('foundation', 'true')
-        }
-        if (counter === 3) {
-            counter = 0
-        }
-
-        document.body.appendChild(newDiv)
+function addBrick(bricksNum) {
+    let n = document.getElementsByClassName('brick').length
+  
+    if (n === bricksNum) {
+        clearInterval(interval)
+        return
     }
+
+    counter++
+    let newDiv;
+    newDiv = document.createElement('div')
+    newDiv.setAttribute('class', 'brick')
+    newDiv.setAttribute('id', `brick-${n+1}`)
+
+    if (counter === 2) {
+        newDiv.setAttribute('foundation', 'true')
+    }
+    if (counter === 3) {
+        counter = 0
+    }
+    document.body.appendChild(newDiv)
 }
 
 function repair(id) {
@@ -34,5 +41,27 @@ function repair(id) {
 }
 
 function destroy() {
-    document.body.lastChild.remove()
+    var bricks = document.getElementsByClassName('brick')
+    var lastBrick = bricks[bricks.length - 1];
+    lastBrick.parentNode.removeChild(lastBrick);
 }
+
+// function build(bricksNum) {
+
+//     let counter = 0;
+//     for (let id = 1; id <= bricksNum; id++) {
+//         counter++
+//         let newDiv;
+//         newDiv = document.createElement('div')
+//         newDiv.setAttribute('class', 'brick')
+//         newDiv.setAttribute('id', `brick-${id}`)
+
+//         if (counter === 2) {
+//             newDiv.setAttribute('foundation', 'true')
+//         }
+//         if (counter === 3) {
+//             counter = 0
+//         }
+//         document.body.appendChild(newDiv)
+//     }
+// }
