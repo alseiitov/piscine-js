@@ -46,10 +46,10 @@ function moveCircle() {
                 circle.style.left = `${x}px`
             } else {
                 if (x < rectX1) {
-                    circle.style.left = `${rectX1 + 1}px`
+                    circle.style.left = `${rectX1}px`
                 }
                 if (x + 50 > rectX2) {
-                    circle.style.left = `${rectX2 - 1 - 50}px`
+                    circle.style.left = `${rectX2 - 50}px`
                 }
             }
 
@@ -57,10 +57,10 @@ function moveCircle() {
                 circle.style.top = `${y}px`
             } else {
                 if (y < rectY1) {
-                    circle.style.top = `${rectY1 + 1}px`
+                    circle.style.top = `${rectY1}px`
                 }
                 if (y + 50 > rectY2) {
-                    circle.style.top = `${rectY2 - 1 - 50}px`
+                    circle.style.top = `${rectY2 - 50}px`
                 }
             }
 
