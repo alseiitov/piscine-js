@@ -8,7 +8,7 @@ function pimp() {
     let toAddOrDelete = styles[button.classList.length - 1]
 
     if (button.classList.length === 2 && button.classList[1] == 'unpimp') {
-        button.classList.remove('unpimp')
+        // button.classList.remove('unpimp')
         return
     }
 
