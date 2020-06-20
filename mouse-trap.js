@@ -35,7 +35,7 @@ function moveCircle() {
         let rectY1 = rect.y
         let rectY2 = rect.y + rect.height
 
-        
+        console.log(rectX2, rect.right, rectY1, rect.bottom)
 
         if (isInFrame(x, y)) {
             circle.style.background = 'var(--purple)'
@@ -81,10 +81,10 @@ function isInFrame(x, y) {
     let rectX2 = rect.x + rect.width
     let rectY1 = rect.y
     let rectY2 = rect.y + rect.height
-    return ((x - 1 > rectX1) &&
-        (x + 1 + 50 < rectX2) &&
-        (y - 1 > rectY1) &&
-        (y + 1 + 50 < rectY2)
+    return ((x > rectX1) &&
+        (x + 50 < rectX2) &&
+        (y > rectY1) &&
+        (y + 50 < rectY2)
     )
 }
 
