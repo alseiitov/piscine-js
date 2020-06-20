@@ -10,7 +10,7 @@ function build(bricksNum) {
 
 function addBrick(bricksNum) {
     let n = document.getElementsByClassName('brick').length
-  
+
     if (n === bricksNum) {
         clearInterval(interval)
         return
@@ -20,7 +20,7 @@ function addBrick(bricksNum) {
     let newDiv;
     newDiv = document.createElement('div')
     newDiv.setAttribute('class', 'brick')
-    newDiv.setAttribute('id', `brick-${n+1}`)
+    newDiv.setAttribute('id', `brick-${n + 1}`)
 
     if (counter === 2) {
         newDiv.dataset.foundation = true
@@ -31,17 +31,15 @@ function addBrick(bricksNum) {
     document.body.appendChild(newDiv)
 }
 
-function repair(id) {
-    let toRepair = document.getElementById(id)
-    if (toRepair.hasAttribute('foundation')) {
-        // newDiv.dataset.foundation = true
-        // toRepair.setAttribute('repair', 'in progress')
-        toRepair.dataset.repair = 'in progress'
-
-    } else {
-        // toRepair.setAttribute('repair', true)
-        toRepair.dataset.repair = true
-    }
+function repair(...ids) {
+    ids.forEach(id => {
+        let toRepair = document.getElementById(id)
+        if (toRepair.dataset.foundation) {
+            toRepair.dataset.repair = "in progress"
+        } else {
+            toRepair.dataset.repair = true
+        }
+    })
 }
 
 function destroy() {
