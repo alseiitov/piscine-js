@@ -56,9 +56,6 @@ function moveCircle() {
             if (y + 1 + 50 > rectY2) {
                 circle.style.top = `${rectY2 - 1 - 50}px`
             }
-            
-
-
         } else {
             circle.style.left = `${x}px`
             circle.style.top = `${y}px`
