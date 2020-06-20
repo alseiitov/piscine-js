@@ -4,23 +4,23 @@ export { pimp }
 
 function pimp() {
     let button = document.getElementsByClassName('button')[0]
-    let len = button.classList.length
-    let toAddOrDelete = styles[len - 1]
 
-    if (len === 1) {
-        button.textContent = 'pimp my style'
+    let toAddOrDelete = styles[button.classList.length - 1]
+
+    if (button.classList.length === 1) {
+        button.classList.remove('unpimp')
     }
- 
-    if (len === styles.length && button.textContent != 'Unpimp my style') {
-        button.textContent = 'Unpimp my style'
+
+    if (button.classList[button.classList.length - 1] != 'unpimp') {
         button.classList.add(toAddOrDelete)
+    }
+
+    if (button.classList[button.classList.length - 1] === styles[styles.length - 1]) {
+        button.classList.add('unpimp')
         return
     }
-    if (button.textContent === 'pimp my style') {
-        button.classList.add(toAddOrDelete)
-    } 
-    if (button.textContent === 'Unpimp my style') {
-        button.classList.remove(button.classList[len-1])
-    } 
 
+    if (button.classList[button.classList.length - 1] == 'unpimp') {
+        button.classList.remove(button.classList[button.classList.length - 2])
+    }
 }
