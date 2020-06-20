@@ -47,23 +47,3 @@ function destroy() {
     var lastBrick = bricks[bricks.length - 1];
     lastBrick.parentNode.removeChild(lastBrick);
 }
-
-// function build(bricksNum) {
-
-//     let counter = 0;
-//     for (let id = 1; id <= bricksNum; id++) {
-//         counter++
-//         let newDiv;
-//         newDiv = document.createElement('div')
-//         newDiv.setAttribute('class', 'brick')
-//         newDiv.setAttribute('id', `brick-${id}`)
-
-//         if (counter === 2) {
-//             newDiv.setAttribute('foundation', 'true')
-//         }
-//         if (counter === 3) {
-//             counter = 0
-//         }
-//         document.body.appendChild(newDiv)
-//     }
-// }
