@@ -5,8 +5,14 @@ function createCircle() {
         let circle = document.createElement('div')
         circle.className = 'circle'
         circle.style.background = 'white'
-        circle.style.left = `${event.clientX - 25}px`
-        circle.style.top = `${event.clientY - 25}px`
+        let x = event.clientX - 25
+        let y = event.clientY - 25
+        circle.style.left = `${x}px`
+        circle.style.top = `${y}px`
+        if (isInFrame(x, y)) {
+            circle.style.background = 'purple'
+        }
+
         document.body.appendChild(circle)
     })
 }
@@ -29,12 +35,7 @@ function moveCircle() {
         let rectY1 = rect.y
         let rectY2 = rect.y + rect.height
 
-        if ((x - 1 > rectX1) &&
-            (x + 1 + 50 < rectX2) &&
-            (y - 1 > rectY1) &&
-            (y + 1 + 50 < rectY2) &&
-            (circle.style.background.startsWith('white'))
-        ) {
+        if (isInFrame(x, y)) {
             circle.style.background = 'purple'
         }
 
@@ -63,6 +64,24 @@ function moveCircle() {
     })
 }
 
+function isInFrame(x, y) {
+    let boxes = document.getElementsByClassName('box')
+    let box = boxes[boxes.length - 1]
+
+    let rect = box.getBoundingClientRect()
+    let rectX1 = rect.x
+    let rectX2 = rect.x + rect.width
+    let rectY1 = rect.y
+    let rectY2 = rect.y + rect.height
+    if ((x - 1 > rectX1) &&
+        (x + 1 + 50 < rectX2) &&
+        (y - 1 > rectY1) &&
+        (y + 1 + 50 < rectY2)
+    ) {
+        return true
+    }
+    return false
+}
 
 function setBox() {
     let box = document.createElement('div')
