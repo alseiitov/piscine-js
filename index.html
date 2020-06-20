@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Mouse trap</title>
+  <title>Pick & click</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link id="fav" rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
   <style>
+
 :root {
   --background: hsl(0, 0%, 12%);
   --text: hsl(0, 0%, 80%);
@@ -30,21 +31,45 @@ body {
   width: 100vw;
   height: 100vh;
   padding: 5rem;
-  font-size: 12px;
+  cursor: crosshair;
 }
 
-.circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  position: absolute;
-  opacity: 0.75;
+svg {
+  filter: invert(100%);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
 }
 
-.box {
-  width: 25vw;
-  height: 25vh;
-  border: solid 1px var(--clear);
+svg line {
+  stroke-width: 0.6px;
+  stroke: grey;
+}
+
+.text {
+  position: fixed;
+  filter: invert(100%);
+  font-size: 50px;
+  cursor: pointer;
+  white-space: pre-wrap;
+}
+
+.hsl {
+  filter: invert(100%);
+  font-size: 17px;
+}
+
+.hue {
+  top: 100px;
+  right: 100px;
+  text-align: right;
+}
+
+.luminosity {
+  bottom: 100px;
+  left: 100px;
 }
 
   </style>
@@ -52,11 +77,9 @@ body {
 <body>
   <script type="module">
 
-import { setBox, createCircle, moveCircle } from './mouse-trap.js'
+import { pick } from './pick-and-click.js'
 
-setBox()
-createCircle()
-moveCircle()
+pick()
 
   </script>
 </body>
