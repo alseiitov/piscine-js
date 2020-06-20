@@ -7,7 +7,7 @@ function compose() {
             newDiv.className = 'note'
             newDiv.innerText = event.key
             let color = event.keyCode - 65
-            newDiv.style.backgroundColor = `rgb(${color}, ${color}, ${color})`
+            newDiv.style.background = `rgb(${color}, ${color}, ${color})`
             document.body.appendChild(newDiv)
         }
         if (event.key === 'Backspace') {
