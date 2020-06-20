@@ -1,12 +1,12 @@
 export { compose }
 
 function compose() {
-    document.addEventListener('keyup', event => {
+    document.addEventListener('keydown', event => {
         if ((/^([a-z]| )$/).test(event.key)) {
             let newDiv = document.createElement('div')
+            let color = (event.keyCode - 65) * 9
             newDiv.className = 'note'
-            newDiv.innerText = event.key
-            let color = event.keyCode - 65
+            newDiv.textContent = event.key
             newDiv.style.background = `rgb(${color}, ${color}, ${color})`
             document.body.appendChild(newDiv)
         }
@@ -14,7 +14,7 @@ function compose() {
             document.body.lastChild.remove()
         }
         if (event.key === 'Escape') {
-            document.body.innerText = ''
+            document.body.textContent = ''
         }
     })
 }
