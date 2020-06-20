@@ -35,9 +35,9 @@ function repair(...ids) {
     ids.forEach(id => {
         let toRepair = document.getElementById(id)
         if (toRepair.dataset.foundation) {
-            toRepair.dataset.repair = "in progress"
+            toRepair.dataset.repaired = 'in progress'
         } else {
-            toRepair.dataset.repair = true
+            toRepair.dataset.repaired = true
         }
     })
 }
