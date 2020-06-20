@@ -23,7 +23,7 @@ function addBrick(bricksNum) {
     newDiv.setAttribute('id', `brick-${n+1}`)
 
     if (counter === 2) {
-        newDiv.setAttribute('foundation', 'true')
+        newDiv.dataset.foundation = true
     }
     if (counter === 3) {
         counter = 0
@@ -34,9 +34,13 @@ function addBrick(bricksNum) {
 function repair(id) {
     let toRepair = document.getElementById(id)
     if (toRepair.hasAttribute('foundation')) {
-        toRepair.setAttribute('repair', 'in progress')
+        // newDiv.dataset.foundation = true
+        // toRepair.setAttribute('repair', 'in progress')
+        toRepair.dataset.repair = 'in progress'
+
     } else {
-        toRepair.setAttribute('repair', 'true')
+        // toRepair.setAttribute('repair', true)
+        toRepair.dataset.repair = true
     }
 }
 
