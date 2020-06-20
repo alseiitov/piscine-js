@@ -10,7 +10,7 @@ function createCircle() {
         circle.style.left = `${x}px`
         circle.style.top = `${y}px`
         if (isInFrame(x, y)) {
-            circle.style.background = 'purple'
+            circle.style.background = 'var(--purple)'
         }
 
         document.body.appendChild(circle)
@@ -35,28 +35,36 @@ function moveCircle() {
         let rectY1 = rect.y
         let rectY2 = rect.y + rect.height
 
+        
+
         if (isInFrame(x, y)) {
-            circle.style.background = 'purple'
+            circle.style.background = 'var(--purple)'
         }
 
-        if (circle.style.background.startsWith('purple')) {
-            if (x - 1 < rectX1) {
-                circle.style.left = `${rectX1 + 1}px`
-            } else {
+        if (circle.style.background.startsWith('var(--purple)')) {
+            if ((x > rectX1 + 1) && (x + 50 < rectX2 - 1)) {
                 circle.style.left = `${x}px`
-            }
-            if (x + 1 + 50 > rectX2) {
-                circle.style.left = `${rectX2 - 1 - 50}px`
+            } else {
+                if (x < rectX1) {
+                    circle.style.left = `${rectX1 + 1}px`
+                }
+                if (x + 50 > rectX2) {
+                    circle.style.left = `${rectX2 - 1 - 50}px`
+                }
             }
 
-            if (y - 1 < rectY1) {
-                circle.style.top = `${rectY1 + 1}px`
-            } else {
+            if ((y > rectY1 + 1) && (y + 50 < rectY2 - 1)) {
                 circle.style.top = `${y}px`
+            } else {
+                if (y < rectY1) {
+                    circle.style.top = `${rectY1 + 1}px`
+                }
+                if (y + 50 > rectY2) {
+                    circle.style.top = `${rectY2 - 1 - 50}px`
+                }
             }
-            if (y + 1 + 50 > rectY2) {
-                circle.style.top = `${rectY2 - 1 - 50}px`
-            }
+
+
         } else {
             circle.style.left = `${x}px`
             circle.style.top = `${y}px`
@@ -73,14 +81,11 @@ function isInFrame(x, y) {
     let rectX2 = rect.x + rect.width
     let rectY1 = rect.y
     let rectY2 = rect.y + rect.height
-    if ((x - 1 > rectX1) &&
+    return ((x - 1 > rectX1) &&
         (x + 1 + 50 < rectX2) &&
         (y - 1 > rectY1) &&
         (y + 1 + 50 < rectY2)
-    ) {
-        return true
-    }
-    return false
+    )
 }
 
 function setBox() {
