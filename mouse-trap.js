@@ -42,7 +42,7 @@ function moveCircle() {
         }
 
         if (circle.style.background.startsWith('var(--purple)')) {
-            if ((x > rectX1 + 1) && (x + 50 < rectX2 - 1)) {
+            if ((x > rectX1) && (x + 50 < rectX2)) {
                 circle.style.left = `${x}px`
             } else {
                 if (x < rectX1) {
@@ -53,7 +53,7 @@ function moveCircle() {
                 }
             }
 
-            if ((y > rectY1 + 1) && (y + 50 < rectY2 - 1)) {
+            if ((y > rectY1) && (y + 50 < rectY2)) {
                 circle.style.top = `${y}px`
             } else {
                 if (y < rectY1) {
