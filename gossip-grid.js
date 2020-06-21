@@ -10,6 +10,12 @@ function grid() {
     let fontSize = document.getElementById('fontSize')
     let background = document.getElementById('background')
 
+    btn.addEventListener('click', event => {
+        let gossip = textArea.value
+        textArea.value = ''
+        newGossip(gossip, true)
+    })
+
     width.addEventListener('input', event => {
         let gossips = document.getElementsByClassName('gossip')
         for (let i = 0; i < gossips.length; i++) {
@@ -82,3 +88,4 @@ function newGossip(gossip, toFront) {
         document.body.appendChild(newDiv)
     }
 }
+
