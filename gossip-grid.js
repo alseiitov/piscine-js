@@ -14,6 +14,7 @@ function grid() {
         let gossip = textArea.value
         textArea.value = ''
         newGossip(gossip, true)
+        event.preventDefault()
     })
 
     width.addEventListener('input', event => {
@@ -49,7 +50,6 @@ function create(params) {
     form.className = 'gossip'
     textArea.placeholder = 'Got a gossip to share?'
     btn.textContent = 'Share gossip!'
-    btn.formAction = '#'
     form.appendChild(textArea)
     form.appendChild(btn)
     document.body.appendChild(form)
