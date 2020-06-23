@@ -1,1 +1,1 @@
-const invert = obj => Object.entries(obj).map(entrie => entrie.reverse()).reduce((a, b) => (a[b[0]] = b[1], a), {})
+const invert = obj => Object.entries(obj).reduce((accum, curr) => (accum[curr[1]] = curr[0], accum), {})
