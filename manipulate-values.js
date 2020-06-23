@@ -1,11 +1,11 @@
 const filterValues = (cart, fn) =>
   Object.entries(cart)
-    .filter((array) => fn(array[1]))
+    .filter((array) => fn(array[0]))
     .reduce((accum, curr) => ((accum[curr[0]] = curr[1]), accum), {});
 
 const mapValues = (cart, fn) =>
   Object.entries(cart)
-    .map((array) => [array[0], fn(array[1])])
+    .map((array) => [array[0], fn(array[0])])
     .reduce((accum, curr) => ((accum[curr[0]] = curr[1]), accum), {});
 
 const reduceValues = (cart, fn, n) =>
